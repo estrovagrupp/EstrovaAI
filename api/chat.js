@@ -16,8 +16,7 @@ export default async function handler(req, res) {
   }
 
   if (req.method!== 'POST') return res.status(405).json({ error: 'Use POST' });
-  if (!key) return res.status(500).json({ error: 'API key missing in Vercel - pane AQ... võti Settings -> Env Vars ja lisa KÕIGILE keskkondadele' });
-
+ if (!key) return res.status(500).json({ error: 'API key missing in Vercel - pane AQ... võti Settings -> Env Vars ja lisa KÕIGILE keskkondadele' });
   try {
     const { text } = req.body;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`;
